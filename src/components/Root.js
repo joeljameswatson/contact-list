@@ -1,0 +1,18 @@
+import React from "react";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import App from "./App";
+import configureStore from "../configureStore";
+
+const store = configureStore();
+
+const Root = () => (
+  <Provider store={store}>
+    <Router basename={process.env.PUBLIC_URL}>
+      <Route path="/" component={App} />
+    </Router>
+  </Provider>
+);
+
+export default Root;
