@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import List from "./List";
+import ContactList from "./ContactList";
 import * as actions from "actions";
-import { getContacts } from "reducers";
+import { getContactList } from "reducers";
 
 class Container extends Component {
   componentDidMount() {
@@ -15,13 +15,12 @@ class Container extends Component {
 
   render() {
     const { list } = this.props;
-    // does tis run before contacts are fetched?
-    return <List contacts={list} />;
+    return <ContactList contacts={list} />;
   }
 }
 
 const mapStateToProps = state => {
-  return { list: getContacts(state) };
+  return { list: getContactList(state) };
 };
 
 export default connect(
