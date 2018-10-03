@@ -1,8 +1,15 @@
 import { combineReducers } from "redux";
-import byId from "./byId";
+import byId, { getContact } from "./byId";
+import ids, { getIds } from "./ids";
 
-const app = combineReducers({
-  byId
+const contacts = combineReducers({
+  byId,
+  ids
 });
 
-export default app;
+export const getContacts = state => {
+  const contactIds = getIds(state.ids);
+  return contactIds.map(id => getContact(state.byId, id));
+};
+
+export default contacts;
