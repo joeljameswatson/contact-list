@@ -14,8 +14,8 @@ class Create extends Component {
     };
   }
   // TODO: look at duplicate naming
-  createContact = () => {
-    this.props.createContact(this.state);
+  handleCreateContact = () => {
+    this.props.handleCreateContact(this.state);
   };
 
   handleInputChange = ({ target: { value, name } }) => {
@@ -62,7 +62,7 @@ class Create extends Component {
         <Button
           variant="contained"
           color="primary"
-          onClick={this.createContact}
+          onClick={this.handleCreateContact}
         >
           Save
         </Button>

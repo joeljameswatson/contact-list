@@ -4,10 +4,10 @@ import Create from "./Create";
 import * as actions from "actions";
 
 class Container extends Component {
-  createContact = data => this.props.createContact(data);
+  handleCreateContact = data => this.props.createContact(data);
 
   render() {
-    return <Create createContact={this.createContact} />;
+    return <Create handleCreateContact={this.handleCreateContact} />;
   }
 }
 

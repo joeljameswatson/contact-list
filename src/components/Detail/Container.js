@@ -14,9 +14,19 @@ class Container extends Component {
     this.props.fetchContactDetail(id);
   };
 
+  handleRequestDelete = () => {
+    const id = this.props.match.params.id;
+    this.props.requestDelete(id).then(() => "navigate away");
+  };
+
   render() {
     const { contact } = this.props;
-    return <Contact contact={contact} />;
+    return (
+      <Contact
+        contact={contact}
+        handleRequestDelete={this.handleRequestDelete}
+      />
+    );
   }
 }
 
