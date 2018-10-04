@@ -1,37 +1,24 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import List from "./List";
-import Detail from "./Detail";
 import Header from "./Header";
-import Create from "./Create";
-import Edit from "./Edit";
-
+import Routes from "./Routes";
 import configureStore from "../configureStore";
-
-const styles = {
-  content: {
-    paddingTop: "64px"
-  }
-};
 
 const store = configureStore();
 
-const Root = ({ classes }) => (
+const Root = () => (
   <Provider store={store}>
     <Router basename={process.env.PUBLIC_URL}>
-      <div className={classes.content}>
+      <React.Fragment>
         <CssBaseline />
         <Header />
-        <Route exact path="/contacts" component={List} />
-        <Route exact path="/contacts/:id" component={Detail} />
-        <Route exact path="/create" component={Create} />
-        <Route path="/edit/:id" component={Edit} />
-      </div>
+        <Routes />
+      </React.Fragment>
     </Router>
   </Provider>
 );
 
-export default withStyles(styles)(Root);
+export default Root;

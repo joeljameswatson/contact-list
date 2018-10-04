@@ -22,7 +22,7 @@ const styles = {
 };
 
 const Header = ({ classes }) => (
-  <AppBar position="fixed" color="primary" className={classes.root}>
+  <AppBar color="primary" className={classes.root} position="sticky">
     <Toolbar>
       <Typography variant="title" color="inherit" className={classes.grow}>
         Contact List
