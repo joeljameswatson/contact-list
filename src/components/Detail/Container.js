@@ -16,7 +16,7 @@ class Container extends Component {
 
   handleRequestDelete = () => {
     const id = this.props.match.params.id;
-    this.props.requestDelete(id).then(() => "navigate away");
+    this.props.deleteContact(id).then(() => "navigate away");
   };
 
   render() {

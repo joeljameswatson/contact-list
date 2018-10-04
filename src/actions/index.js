@@ -37,3 +37,14 @@ export const createContact = data => dispatch => {
     });
   });
 };
+
+export const deleteContact = id => dispatch => {
+  dispatch({ type: "DELETE_CONTACT", id });
+
+  return api.deleteContact(id).then(response => {
+    dispatch({
+      type: "DELETE_CONTACT_SUCCESS",
+      id
+    });
+  });
+};

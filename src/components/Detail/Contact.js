@@ -11,10 +11,6 @@ import { withStyles } from "@material-ui/core/styles";
 const styles = {
   card: {
     maxWidth: 345
-  },
-  media: {
-    // ⚠️ object-fit is not supported by IE11.
-    objectFit: "cover"
   }
 };
 
@@ -29,7 +25,6 @@ const Contact = ({ contact, classes, handleRequestDelete }) => {
         <CardMedia
           component="img"
           alt={fullName}
-          className={classes.media}
           height="140"
           image={contact.avatar}
         />

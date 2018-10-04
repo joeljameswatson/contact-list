@@ -8,6 +8,8 @@ const ids = (state = [], action) => {
         return state;
       }
       return [...state, action.response.result];
+    case "DELETE_CONTACT_SUCCESS":
+      return state.filter(id => id !== action.id);
     default:
       return state;
   }

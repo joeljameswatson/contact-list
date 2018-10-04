@@ -21,7 +21,7 @@ export const fetchContacts = () =>
 
 export const fetchContactDetail = id =>
   delay(500).then(() => {
-    return fakeDatabase.contacts.find(contact => contact.id.toString() === id);
+    return fakeDatabase.contacts.find(contact => contact.id === id);
   });
 
 export const createContact = ({ first_name, last_name, email, phone }) =>
@@ -35,4 +35,11 @@ export const createContact = ({ first_name, last_name, email, phone }) =>
     };
     fakeDatabase.contacts.push(contact);
     return contact;
+  });
+
+export const deleteContact = id =>
+  delay(500).then(() => {
+    fakeDatabase.contacts = fakeDatabase.contacts.filter(
+      contact => contact.id !== id
+    );
   });
