@@ -5,6 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import List from "./List";
 import Detail from "./Detail";
 import Header from "./Header";
+import Create from "./Create";
 
 import configureStore from "../configureStore";
 
@@ -23,6 +24,7 @@ const Root = ({ classes }) => (
         <Header />
         <Route exact path="/contacts" component={List} />
         <Route path="/contacts/:id" component={Detail} />
+        <Route path="/create" component={Create} />
       </div>
     </Router>
   </Provider>

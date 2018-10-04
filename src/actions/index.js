@@ -26,3 +26,14 @@ export const fetchContactDetail = id => dispatch => {
     });
   });
 };
+
+export const createContact = data => dispatch => {
+  dispatch({ type: "CREATE_CONTACT", payload: data });
+
+  return api.createContact(data).then(response => {
+    dispatch({
+      type: "CREATE_CONTACT_SUCCESS",
+      response: normalize(response, schema.contact)
+    });
+  });
+};

@@ -1,6 +1,6 @@
 // This is a fake in-memory implementation of something
 // that would be implemented by calling a REST server
-
+import { v4 } from "node-uuid";
 import contacts from "./contacts";
 
 const fakeDatabase = {
@@ -22,4 +22,17 @@ export const fetchContacts = () =>
 export const fetchContactDetail = id =>
   delay(500).then(() => {
     return fakeDatabase.contacts.find(contact => contact.id.toString() === id);
+  });
+
+export const createContact = ({ first_name, last_name, email, phone }) =>
+  delay(500).then(() => {
+    const contact = {
+      id: v4(),
+      first_name,
+      last_name,
+      email,
+      phone
+    };
+    fakeDatabase.contacts.push(contact);
+    return contact;
   });
