@@ -4,7 +4,10 @@ import * as actions from "actions";
 import ContactInfoForm from "components/ContactInfoForm";
 
 class Container extends Component {
-  handleCreateContact = data => this.props.createContact(data);
+  handleCreateContact = data => {
+    const { updateContact, history } = this.props;
+    this.props.createContact(data).then(() => history.push("/contacts"));
+  };
 
   render() {
     return (

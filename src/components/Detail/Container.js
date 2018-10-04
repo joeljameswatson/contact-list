@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import Contact from "./Contact";
 import * as actions from "actions";
 import { getContactDetail } from "reducers";
-import { withRouter } from "react-router-dom";
 
 class Container extends Component {
   componentDidMount() {
@@ -36,9 +35,7 @@ const mapStateToProps = (state, ownProps) => {
   return { contact: getContactDetail(state, ownProps.match.params.id) };
 };
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    actions
-  )(Container)
-);
+export default connect(
+  mapStateToProps,
+  actions
+)(Container);

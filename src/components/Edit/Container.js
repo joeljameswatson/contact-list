@@ -5,7 +5,10 @@ import ContactInfoForm from "components/ContactInfoForm";
 import { getContactDetail } from "reducers";
 
 class Container extends Component {
-  handleUpdateContact = data => this.props.updateContact(data);
+  handleUpdateContact = data => {
+    const { updateContact, history } = this.props;
+    updateContact(data).then(() => history.push("/contacts"));
+  };
 
   render() {
     return (

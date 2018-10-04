@@ -28,7 +28,7 @@ class ContactInfoForm extends Component {
     return (
       <Form
         handleInputChange={this.handleInputChange}
-        handleSave={this.handleInputChange}
+        handleSave={this.handleSave}
         values={this.state}
         title={this.props.title}
       />
