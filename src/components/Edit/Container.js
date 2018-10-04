@@ -12,6 +12,7 @@ class Container extends Component {
       <ContactInfoForm
         handleSave={this.handleUpdateContact}
         existingContact={this.props.contact}
+        title="Edit Contact Details"
       />
     );
   }

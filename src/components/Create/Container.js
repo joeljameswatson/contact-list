@@ -7,7 +7,12 @@ class Container extends Component {
   handleCreateContact = data => this.props.createContact(data);
 
   render() {
-    return <ContactInfoForm handleSave={this.handleCreateContact} />;
+    return (
+      <ContactInfoForm
+        handleSave={this.handleCreateContact}
+        title="Create New Contact"
+      />
+    );
   }
 }
 
