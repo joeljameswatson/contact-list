@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Contact from "./Contact";
 import * as actions from "actions";
 import { getContactDetail } from "reducers";
+import { withRouter } from "react-router-dom";
 
 class Container extends Component {
   componentDidMount() {
@@ -15,8 +16,9 @@ class Container extends Component {
   };
 
   handleRequestDelete = () => {
-    const id = this.props.match.params.id;
-    this.props.deleteContact(id).then(() => "navigate away");
+    const { match, deleteContact, history } = this.props;
+    const id = match.params.id;
+    deleteContact(id).then(() => history.push("/contacts"));
   };
 
   render() {
@@ -34,7 +36,9 @@ const mapStateToProps = (state, ownProps) => {
   return { contact: getContactDetail(state, ownProps.match.params.id) };
 };
 
-export default connect(
-  mapStateToProps,
-  actions
-)(Container);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    actions
+  )(Container)
+);

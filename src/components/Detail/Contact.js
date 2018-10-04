@@ -14,20 +14,19 @@ const styles = {
   }
 };
 
-const Contact = ({ contact, classes, handleRequestDelete }) => {
-  if (!contact) {
-    return null;
-  }
+const Contact = ({ contact = {}, classes, handleRequestDelete }) => {
   const fullName = `${contact.first_name} ${contact.last_name}`;
   return (
     <Card className={classes.card}>
       <CardActionArea>
-        <CardMedia
-          component="img"
-          alt={fullName}
-          height="140"
-          image={contact.avatar}
-        />
+        {contact.avatar && (
+          <CardMedia
+            component="img"
+            alt={fullName}
+            height="140"
+            image={contact.avatar}
+          />
+        )}
         <CardContent>
           <Typography gutterBottom variant="headline" component="h2">
             {fullName}
