@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Create from "./Create";
 import * as actions from "actions";
+import ContactInfoForm from "components/ContactInfoForm";
 
 class Container extends Component {
   handleCreateContact = data => this.props.createContact(data);
 
   render() {
-    return <Create handleSave={this.handleCreateContact} />;
+    return <ContactInfoForm handleSave={this.handleCreateContact} />;
   }
 }
 

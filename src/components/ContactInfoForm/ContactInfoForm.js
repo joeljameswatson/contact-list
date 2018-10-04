@@ -2,16 +2,17 @@ import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
-class Create extends Component {
+class ContactInfoForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    const newContact = {
       first_name: "",
       last_name: "",
       email: "",
       phone: "",
       avatar: "21.jpg"
     };
+    this.state = this.props.existingContact || newContact;
   }
 
   handleSave = () => {
@@ -67,4 +68,4 @@ class Create extends Component {
   }
 }
 
-export default Create;
+export default ContactInfoForm;

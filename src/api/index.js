@@ -43,3 +43,13 @@ export const deleteContact = id =>
       contact => contact.id !== id
     );
   });
+
+export const updateContact = payload =>
+  delay(500).then(() => {
+    fakeDatabase.contacts.forEach(function(contact, index, arr) {
+      if (contact.id === payload.id) {
+        arr[index] = payload;
+      }
+    });
+    return payload;
+  });

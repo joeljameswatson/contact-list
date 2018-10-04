@@ -6,6 +6,7 @@ import List from "./List";
 import Detail from "./Detail";
 import Header from "./Header";
 import Create from "./Create";
+import Edit from "./Edit";
 
 import configureStore from "../configureStore";
 
@@ -23,8 +24,9 @@ const Root = ({ classes }) => (
       <div className={classes.content}>
         <Header />
         <Route exact path="/contacts" component={List} />
-        <Route path="/contacts/:id" component={Detail} />
-        <Route path="/create" component={Create} />
+        <Route exact path="/contacts/:id" component={Detail} />
+        <Route exact path="/create" component={Create} />
+        <Route path="/edit/:id" component={Edit} />
       </div>
     </Router>
   </Provider>

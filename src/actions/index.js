@@ -48,3 +48,14 @@ export const deleteContact = id => dispatch => {
     });
   });
 };
+
+export const updateContact = id => dispatch => {
+  dispatch({ type: "UPDATE_CONTACT", id });
+
+  return api.updateContact(id).then(response => {
+    dispatch({
+      type: "UPDATE_CONTACT_SUCCESS",
+      response: normalize(response, schema.contact)
+    });
+  });
+};

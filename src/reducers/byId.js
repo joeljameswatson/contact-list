@@ -3,6 +3,7 @@ const byId = (state = {}, action) => {
     case "FETCH_CONTACTS_SUCCESS":
     case "FETCH_CONTACT_DETAIL_SUCCESS":
     case "CREATE_CONTACT_SUCCESS":
+    case "UPDATE_CONTACT_SUCCESS":
       return {
         ...state,
         ...action.response.entities.contacts
