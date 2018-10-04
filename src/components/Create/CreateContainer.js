@@ -5,8 +5,8 @@ import ContactInfoForm from "components/shared/ContactInfoForm";
 
 class Container extends Component {
   handleCreateContact = data => {
-    const { updateContact, history } = this.props;
-    this.props.createContact(data).then(() => history.push("/contacts"));
+    const { createContact, history } = this.props;
+    createContact(data).then(() => history.push("/contacts"));
   };
 
   render() {

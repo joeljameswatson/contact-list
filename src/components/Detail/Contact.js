@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -24,10 +23,12 @@ const Contact = ({ contact = {}, classes, handleRequestDelete }) => {
   const fullName = `${contact.first_name} ${contact.last_name}`;
   return (
     <Card className={classes.card}>
-      <CardMedia
-        className={classes.media}
-        image={`${process.env.PUBLIC_URL}${contact.avatar}`}
-      />
+      {contact.avatar && (
+        <CardMedia
+          className={classes.media}
+          image={`${process.env.PUBLIC_URL}${contact.avatar}`}
+        />
+      )}
       <CardContent>
         <Typography gutterBottom variant="headline" component="h2">
           {fullName}

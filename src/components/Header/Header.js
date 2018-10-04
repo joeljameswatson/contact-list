@@ -4,17 +4,20 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const styles = {
   root: {
     flexGrow: 1
   },
   grow: {
-    flexGrow: 1
+    flexGrow: 1,
+    textDecoration: "none",
+    color: "white"
   },
   link: {
-    textDecoration: "none"
+    textDecoration: "none",
+    color: "white"
   },
   button: {
     color: "white"
@@ -25,8 +28,11 @@ const Header = ({ classes }) => (
   <AppBar color="primary" className={classes.root} position="sticky">
     <Toolbar>
       <Typography variant="title" color="inherit" className={classes.grow}>
-        Contact List
+        <Link to="/contacts" className={classes.link}>
+          Contact List
+        </Link>
       </Typography>
+
       <NavLink
         className={classes.link}
         to="/contacts"
