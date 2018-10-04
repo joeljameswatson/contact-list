@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
+import Form from "./Form";
 
 class ContactInfoForm extends Component {
   constructor(props) {
@@ -27,43 +26,11 @@ class ContactInfoForm extends Component {
 
   render() {
     return (
-      <form noValidate autoComplete="off">
-        <TextField
-          name="first_name"
-          label="First Name"
-          value={this.state.first_name}
-          onChange={e => this.handleInputChange(e)}
-          margin="normal"
-        />
-        <br />
-        <TextField
-          name="last_name"
-          label="Last Name"
-          value={this.state.last_name}
-          onChange={e => this.handleInputChange(e)}
-          margin="normal"
-        />
-        <br />
-        <TextField
-          name="email"
-          label="Email"
-          value={this.state.email}
-          onChange={e => this.handleInputChange(e)}
-          margin="normal"
-        />
-        <br />
-        <TextField
-          name="phone"
-          label="Phone"
-          value={this.state.phone}
-          onChange={e => this.handleInputChange(e)}
-          margin="normal"
-        />
-        <br />
-        <Button variant="contained" color="primary" onClick={this.handleSave}>
-          Save
-        </Button>
-      </form>
+      <Form
+        handleInputChange={this.handleInputChange}
+        handleSave={this.handleInputChange}
+        values={this.state}
+      />
     );
   }
 }

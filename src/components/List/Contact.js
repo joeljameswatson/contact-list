@@ -9,7 +9,10 @@ const Contact = ({ contact, match }) => {
   return (
     <Link to={`${match.url}/${contact.id}`}>
       <ListItem key={contact.id} dense button>
-        <Avatar alt={fullName} src={contact.avatar} />
+        <Avatar
+          alt={fullName}
+          src={`${process.env.PUBLIC_URL}${contact.avatar}`}
+        />
         <ListItemText primary={fullName} />
       </ListItem>
     </Link>
