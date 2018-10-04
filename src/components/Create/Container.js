@@ -7,7 +7,7 @@ class Container extends Component {
   handleCreateContact = data => this.props.createContact(data);
 
   render() {
-    return <Create handleCreateContact={this.handleCreateContact} />;
+    return <Create handleSave={this.handleCreateContact} />;
   }
 }
 

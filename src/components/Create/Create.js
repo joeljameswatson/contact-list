@@ -13,9 +13,9 @@ class Create extends Component {
       avatar: "21.jpg"
     };
   }
-  // TODO: look at duplicate naming
-  handleCreateContact = () => {
-    this.props.handleCreateContact(this.state);
+
+  handleSave = () => {
+    this.props.handleSave(this.state);
   };
 
   handleInputChange = ({ target: { value, name } }) => {
@@ -59,11 +59,7 @@ class Create extends Component {
           margin="normal"
         />
         <br />
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={this.handleCreateContact}
-        >
+        <Button variant="contained" color="primary" onClick={this.handleSave}>
           Save
         </Button>
       </form>
