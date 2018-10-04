@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "actions";
-import ContactInfoForm from "components/ContactInfoForm";
+import ContactInfoForm from "components/shared/ContactInfoForm";
 
 class Container extends Component {
   handleCreateContact = data => {

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ContactList from "./ContactList";
+import ContactList from "./List";
 import * as actions from "actions";
 import { getContactList } from "reducers";
 
-class Container extends Component {
+class ListContainer extends Component {
   componentDidMount() {
     this.fetchData();
   }
@@ -26,4 +26,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   actions
-)(Container);
+)(ListContainer);
