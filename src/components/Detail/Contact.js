@@ -9,17 +9,6 @@ import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import { withRouter, Link } from "react-router-dom";
 
-// const stylesP = {};
-// const Picture = props => {
-//   return (
-//     <div className={""}>
-//       <img src={`${process.env.PUBLIC_URL}${props.contact.avatar}`} />
-//     </div>
-//   );
-// };
-
-// const PictureP = withStyles(stylesP)(Picture);
-
 const styles = {
   card: {
     width: 400,
@@ -38,7 +27,6 @@ const Contact = ({ contact = {}, classes, handleRequestDelete }) => {
       <CardMedia
         className={classes.media}
         image={`${process.env.PUBLIC_URL}${contact.avatar}`}
-        // component={() => <PictureP contact={contact} />}
       />
       <CardContent>
         <Typography gutterBottom variant="headline" component="h2">
