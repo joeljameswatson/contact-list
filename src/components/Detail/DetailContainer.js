@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Contact from "./Contact";
 import * as actions from "actions";
-import { getContactDetail, getIsFetching } from "reducers";
+import { getContactDetail, getIsFetching, getErrorMessage } from "reducers";
 import ApiError from "components/shared/ApiError";
 
 class Container extends Component {
@@ -17,9 +17,7 @@ class Container extends Component {
 
   fetchData = () => {
     const id = this.props.match.params.id;
-    // this will also catch errors thrown in action creator
-    this.setState({ error: null });
-    this.props.fetchContactDetail(id).catch(error => this.setState({ error }));
+    this.props.fetchContactDetail(id);
   };
 
   handleRequestDelete = () => {
@@ -30,10 +28,10 @@ class Container extends Component {
 
   render() {
     const { contact } = this.props;
-    if (this.state.error) {
+    if (this.props.errorMessage) {
       return (
         <ApiError
-          message={this.state.error.message}
+          message={this.props.errorMessage.message}
           handleRetry={this.fetchData}
         />
       );
@@ -52,7 +50,8 @@ class Container extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     contact: getContactDetail(state, ownProps.match.params.id),
-    isFetching: getIsFetching(state)
+    isFetching: getIsFetching(state),
+    errorMessage: getErrorMessage(state)
   };
 };
 

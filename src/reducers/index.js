@@ -17,9 +17,12 @@ export const getContactDetail = (state, id) => {
   return contacts.find(contact => contact.id === id);
 };
 
-export const getIsFetching = (state, id) => {
-  console.log(state);
+export const getIsFetching = state => {
   return fromList.getIsFetching(state.list);
+};
+
+export const getErrorMessage = state => {
+  return fromList.getErrorMessage(state.list);
 };
 
 export default contacts;

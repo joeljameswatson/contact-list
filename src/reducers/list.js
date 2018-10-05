@@ -29,27 +29,26 @@ const isFetching = (state = false, action) => {
   }
 };
 
+const errorMessage = (state = null, action) => {
+  switch (action.type) {
+    case "FETCH_CONTACT_DETAIL_FAILURE":
+      return action.message;
+    case "FETCH_CONTACT_DETAIL_REQUEST":
+    case "FETCH_CONTACT_DETAIL_SUCCESS":
+      return null;
+    default:
+      return state;
+  }
+};
+
 const list = combineReducers({
   ids,
-  isFetching
+  isFetching,
+  errorMessage
 });
-
-// const errorMessage = (state = null, action) => {
-//   if (filter !== action.filter) {
-//     return state;
-//   }
-//   switch (action.type) {
-//     case "FETCH_CONTACT_DETAIL_FAILURE":
-//       return action.message;
-//     case "FETCH_CONTACT_DETAIL_REQUEST":
-//     case "FETCH_CONTACT_DETAIL_SUCCESS":
-//       return null;
-//     default:
-//       return state;
-//   }
-// };
 
 export const getIds = state => state.ids;
 export const getIsFetching = state => state.isFetching;
+export const getErrorMessage = state => state.errorMessage;
 
 export default list;
