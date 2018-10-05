@@ -15,7 +15,7 @@ export const fetchContacts = () => dispatch => {
 
 export const fetchContactDetail = id => dispatch => {
   dispatch({
-    type: "FETCH_CONTACT_DETAIL",
+    type: "FETCH_CONTACT_DETAIL_REQUEST",
     id
   });
 
