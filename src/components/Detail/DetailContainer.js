@@ -46,6 +46,7 @@ class Container extends Component {
         contact={contact}
         handleRequestDelete={this.handleRequestDelete}
         loading={this.state.loading}
+        id={this.props.match.params.id}
       />
     );
   }

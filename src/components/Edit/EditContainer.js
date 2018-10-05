@@ -5,6 +5,7 @@ import ContactInfoForm from "components/shared/ContactInfoForm";
 import { getContactDetail } from "reducers";
 
 class Container extends Component {
+  // TODO: load contact from server if not available
   handleUpdateContact = data => {
     const { updateContact, history } = this.props;
     updateContact(data).then(() => history.push("/contacts"));

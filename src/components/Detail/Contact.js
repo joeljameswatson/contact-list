@@ -27,7 +27,13 @@ const styles = {
   }
 };
 
-const Contact = ({ contact = {}, classes, handleRequestDelete, loading }) => {
+const Contact = ({
+  contact = {},
+  classes,
+  handleRequestDelete,
+  loading,
+  id
+}) => {
   return (
     <Padding>
       <Card className={classes.card}>
@@ -52,7 +58,7 @@ const Contact = ({ contact = {}, classes, handleRequestDelete, loading }) => {
         )}
 
         <CardActions>
-          <Link to={`/edit/${contact.id}`}>
+          <Link to={`/edit/${id}`}>
             <Button size="small" color="primary">
               Edit
             </Button>
