@@ -8,7 +8,7 @@ import ApiError from "components/shared/ApiError";
 class Container extends Component {
   constructor(props) {
     super(props);
-    this.state = { error: null };
+    this.state = { error: null, loading: false };
   }
 
   componentDidMount() {
@@ -18,8 +18,11 @@ class Container extends Component {
   fetchData = () => {
     const id = this.props.match.params.id;
     // this will also catch errors thrown in action creator
-    this.setState({ error: null });
-    this.props.fetchContactDetail(id).catch(error => this.setState({ error }));
+    this.setState({ error: null, loading: true });
+    this.props
+      .fetchContactDetail(id)
+      .catch(error => this.setState({ error }))
+      .finally(() => this.setState({ loading: false }));
   };
 
   handleRequestDelete = () => {
@@ -42,6 +45,7 @@ class Container extends Component {
       <Contact
         contact={contact}
         handleRequestDelete={this.handleRequestDelete}
+        loading={this.state.loading}
       />
     );
   }

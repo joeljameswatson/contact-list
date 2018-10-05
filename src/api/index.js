@@ -4,7 +4,11 @@ import { v4 } from "node-uuid";
 import contacts from "./contacts";
 
 const fakeDatabase = {
-  contacts: contacts.map(c => ({ ...c, id: c.id.toString() }))
+  contacts: contacts.map(contact => ({
+    ...contact,
+    id: contact.id.toString(),
+    avatar_large: contact.avatar
+  }))
 };
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -20,7 +24,7 @@ export const fetchContacts = () =>
   );
 
 export const fetchContactDetail = id =>
-  delay(500).then(() => {
+  delay(1000).then(() => {
     const contact = fakeDatabase.contacts.find(contact => contact.id === id);
     if (!contact) throw new Error("cant find that one!");
     // const rand = Math.random();
