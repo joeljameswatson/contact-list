@@ -3,15 +3,23 @@ import { connect } from "react-redux";
 import Contact from "./Contact";
 import * as actions from "actions";
 import { getContactDetail } from "reducers";
+import ApiError from "components/shared/ApiError";
 
 class Container extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { error: null };
+  }
+
   componentDidMount() {
     this.fetchData();
   }
 
   fetchData = () => {
     const id = this.props.match.params.id;
-    this.props.fetchContactDetail(id);
+    // this will also catch errors thrown in action creator
+    this.setState({ error: null });
+    this.props.fetchContactDetail(id).catch(error => this.setState({ error }));
   };
 
   handleRequestDelete = () => {
@@ -22,6 +30,14 @@ class Container extends Component {
 
   render() {
     const { contact } = this.props;
+    if (this.state.error) {
+      return (
+        <ApiError
+          message={this.state.error.message}
+          handleRetry={this.fetchData}
+        />
+      );
+    }
     return (
       <Contact
         contact={contact}

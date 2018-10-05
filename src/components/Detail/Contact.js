@@ -21,7 +21,8 @@ const styles = {
 };
 
 const Contact = ({ contact = {}, classes, handleRequestDelete }) => {
-  const fullName = `${contact.first_name} ${contact.last_name}`;
+  // TODO: look at computing this in redux
+  const fullName = `${contact.first_name || ""} ${contact.last_name || ""}`;
   return (
     <Padding>
       <Card className={classes.card}>
