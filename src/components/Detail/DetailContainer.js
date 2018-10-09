@@ -23,7 +23,6 @@ class Container extends Component {
 
   render() {
     const { contact } = this.props;
-    console.log(contact);
     if (this.props.errorMessage) {
       return (
         <ApiError
