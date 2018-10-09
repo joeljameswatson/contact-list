@@ -19,20 +19,20 @@ export const fetchContactDetail = id => dispatch => {
     id
   });
 
-  return api
-    .fetchContactDetail(id)
-    .then(response => {
+  return api.fetchContactDetail(id).then(
+    response => {
       dispatch({
         type: "FETCH_CONTACT_DETAIL_SUCCESS",
         response: normalize(response, schema.contact)
       });
-    })
-    .catch(err => {
+    },
+    error => {
       dispatch({
         type: "FETCH_CONTACT_DETAIL_FAILURE",
-        message: err.message
+        message: error.message
       });
-    });
+    }
+  );
 };
 
 export const createContact = data => dispatch => {
