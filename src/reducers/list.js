@@ -32,7 +32,7 @@ const isFetching = (state = false, action) => {
 const errorMessage = (state = null, action) => {
   switch (action.type) {
     case "FETCH_CONTACT_DETAIL_FAILURE":
-      return action.message;
+      return action.error.message;
     case "FETCH_CONTACT_DETAIL_REQUEST":
     case "FETCH_CONTACT_DETAIL_SUCCESS":
       return null;

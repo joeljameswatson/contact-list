@@ -6,11 +6,6 @@ import { getContactDetail, getIsFetching, getErrorMessage } from "reducers";
 import ApiError from "components/shared/ApiError";
 
 class Container extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { error: null };
-  }
-
   componentDidMount() {
     this.fetchData();
   }
@@ -28,10 +23,11 @@ class Container extends Component {
 
   render() {
     const { contact } = this.props;
+    console.log(contact);
     if (this.props.errorMessage) {
       return (
         <ApiError
-          message={this.props.errorMessage.message}
+          message={this.props.errorMessage}
           handleRetry={this.fetchData}
         />
       );

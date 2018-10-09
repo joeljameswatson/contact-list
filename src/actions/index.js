@@ -15,7 +15,8 @@ export const fetchContactDetail = id => ({
     "FETCH_CONTACT_DETAIL_SUCCESS",
     "FETCH_CONTACT_DETAIL_FAILURE"
   ],
-  callAPI: () => api.fetchContactDetail(id)
+  callAPI: () => api.fetchContactDetail(id),
+  payload: { id }
 });
 
 export const createContact = data => ({
@@ -33,7 +34,8 @@ export const deleteContact = id => ({
     "DELETE_CONTACT_SUCCESS",
     "DELETE_CONTACT_FAILURE"
   ],
-  callAPI: () => api.deleteContact(id)
+  callAPI: () => api.deleteContact(id),
+  payload: { id }
 });
 
 export const updateContact = id => ({
@@ -42,5 +44,6 @@ export const updateContact = id => ({
     "UPDATE_CONTACT_SUCCESS",
     "UPDATE_CONTACT_FAILURE"
   ],
-  callAPI: () => api.updateContact(id)
+  callAPI: () => api.updateContact(id),
+  payload: { id }
 });
