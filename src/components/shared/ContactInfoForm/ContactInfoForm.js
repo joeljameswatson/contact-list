@@ -14,6 +14,12 @@ class ContactInfoForm extends Component {
     this.state = this.props.existingContact || newContact;
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.existingContact !== this.props.existingContact) {
+      this.setState(this.props.existingContact);
+    }
+  }
+
   handleSave = () => {
     this.props.handleSave(this.state);
   };
