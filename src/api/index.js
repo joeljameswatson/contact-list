@@ -27,11 +27,6 @@ export const fetchContactDetail = id =>
   delay(500).then(() => {
     const contact = fakeDatabase.contacts.find(contact => contact.id === id);
     if (!contact) throw new Error("cant find that one!");
-    // const rand = Math.random();
-    // console.log(rand);
-    // if (rand > 0.5) {
-    //   throw new Error("boom!");
-    // }
     return contact;
   });
 
