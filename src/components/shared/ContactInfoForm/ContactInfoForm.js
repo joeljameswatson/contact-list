@@ -8,8 +8,7 @@ class ContactInfoForm extends Component {
       first_name: "",
       last_name: "",
       email: "",
-      phone: "",
-      avatar: "21.jpg"
+      phone: ""
     };
     this.state = this.props.existingContact || newContact;
   }
