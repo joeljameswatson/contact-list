@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import byId, { getContact } from "./byId";
+import byId, * as fromById from "./byId";
 import list, * as fromList from "./list";
 
 const contacts = combineReducers({
@@ -9,7 +9,7 @@ const contacts = combineReducers({
 
 export const getContactList = state => {
   const contactIds = fromList.getIds(state.list);
-  return contactIds.map(id => getContact(state.byId, id));
+  return contactIds.map(id => fromById.getContact(state.byId, id));
 };
 
 export const getContactDetail = (state, id) => {
@@ -23,6 +23,14 @@ export const getIsFetching = state => {
 
 export const getErrorMessage = state => {
   return fromList.getErrorMessage(state.list);
+};
+
+export const getIsListFetched = state => {
+  return fromList.getIsListFetched(state.list);
+};
+
+export const getIsDetailFetched = (state, id) => {
+  return fromById.getIsDetailFetched(state.byId, id);
 };
 
 export default contacts;

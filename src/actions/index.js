@@ -1,4 +1,5 @@
 import * as api from "api";
+import { getIsDetailFetched, getIsListFetched } from "reducers";
 
 export const fetchContacts = () => ({
   types: [
@@ -6,7 +7,8 @@ export const fetchContacts = () => ({
     "FETCH_CONTACTS_SUCCESS",
     "FETCH_CONTACTS_FAILURE"
   ],
-  callAPI: () => api.fetchContacts()
+  callAPI: () => api.fetchContacts(),
+  shouldCallAPI: state => !getIsListFetched(state)
 });
 
 export const fetchContactDetail = id => ({
@@ -16,6 +18,7 @@ export const fetchContactDetail = id => ({
     "FETCH_CONTACT_DETAIL_FAILURE"
   ],
   callAPI: () => api.fetchContactDetail(id),
+  shouldCallAPI: state => !getIsDetailFetched(state, id),
   payload: { id }
 });
 

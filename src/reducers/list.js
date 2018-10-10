@@ -44,14 +44,25 @@ const errorMessage = (state = null, action) => {
   }
 };
 
+const isListFetched = (state = false, action) => {
+  switch (action.type) {
+    case "FETCH_CONTACTS_SUCCESS":
+      return true;
+    default:
+      return state;
+  }
+};
+
 const list = combineReducers({
   ids,
   isFetching,
+  isListFetched,
   errorMessage
 });
 
 export const getIds = state => state.ids;
 export const getIsFetching = state => state.isFetching;
 export const getErrorMessage = state => state.errorMessage;
+export const getIsListFetched = state => state.isListFetched;
 
 export default list;
