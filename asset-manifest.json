@@ -1,4 +1,11 @@
 {
-  "main.js": "static/js/main.046fa17c.js",
-  "main.js.map": "static/js/main.046fa17c.js.map"
+  "main.js": "/contact-list/static/js/main.f55490eb.chunk.js",
+  "main.js.map": "/contact-list/static/js/main.f55490eb.chunk.js.map",
+  "static/js/1.d574f4a7.chunk.js": "/contact-list/static/js/1.d574f4a7.chunk.js",
+  "static/js/1.d574f4a7.chunk.js.map": "/contact-list/static/js/1.d574f4a7.chunk.js.map",
+  "runtime~main.js": "/contact-list/static/js/runtime~main.377b31ea.js",
+  "runtime~main.js.map": "/contact-list/static/js/runtime~main.377b31ea.js.map",
+  "index.html": "/contact-list/index.html",
+  "precache-manifest.9f084d459c4093d3d050f1e70510ae1a.js": "/contact-list/precache-manifest.9f084d459c4093d3d050f1e70510ae1a.js",
+  "service-worker.js": "/contact-list/service-worker.js"
 }
