@@ -44,7 +44,7 @@ const errorMessage = (state = null, action) => {
   }
 };
 
-const isListFetched = (state = false, action) => {
+export const isListFetched = (state = false, action) => {
   switch (action.type) {
     case "FETCH_CONTACTS_SUCCESS":
       return true;
