@@ -5,7 +5,7 @@ import * as actions from "actions";
 import { getContactDetail, getIsFetching, getErrorMessage } from "reducers";
 import ApiError from "components/shared/ApiError";
 
-class Container extends Component {
+export class DetailContainer extends Component {
   componentDidMount() {
     this.fetchData();
   }
@@ -53,4 +53,4 @@ const mapStateToProps = (state, ownProps) => {
 export default connect(
   mapStateToProps,
   actions
-)(Container);
+)(DetailContainer);
