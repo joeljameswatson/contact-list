@@ -21,7 +21,7 @@ const styles = {
   }
 };
 
-const Contact = ({
+export const Contact = ({
   contact = {},
   classes,
   handleRequestDelete,
@@ -50,11 +50,16 @@ const Contact = ({
 
         <CardActions>
           <Link to={`/edit/${id}`}>
-            <Button size="small" color="primary">
+            <Button size="small" color="primary" id="edit-contact">
               Edit
             </Button>
           </Link>
-          <Button size="small" color="primary" onClick={handleRequestDelete}>
+          <Button
+            size="small"
+            color="primary"
+            onClick={handleRequestDelete}
+            id="delete-contact"
+          >
             Delete
           </Button>
         </CardActions>
