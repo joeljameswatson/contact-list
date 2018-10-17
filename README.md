@@ -10,3 +10,4 @@ It uses a fake in memory api with an atificial delay to mimick what user experie
 * State management
 * Communicating with API
 * Error handling
+* Testing
