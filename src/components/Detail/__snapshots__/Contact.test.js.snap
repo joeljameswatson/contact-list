@@ -23,7 +23,7 @@ exports[`renders a contact correctly 1`] = `
       className="MuiCardContent-root-32"
     >
       <h2
-        className="MuiTypography-root-33 MuiTypography-headline-38 MuiTypography-gutterBottom-60"
+        className="MuiTypography-root-33 MuiTypography-headline-38 MuiTypography-gutterBottom-51"
       >
         Marchall
          
@@ -43,15 +43,15 @@ exports[`renders a contact correctly 1`] = `
       </p>
     </div>
     <div
-      className="MuiCardActions-root-68"
+      className="MuiCardActions-root-59"
     >
       <a
-        className="MuiCardActions-action-69"
+        className="MuiCardActions-action-60"
         href="/edit/4"
         onClick={[Function]}
       >
         <button
-          className="MuiButtonBase-root-96 MuiButton-root-70 MuiButton-text-72 MuiButton-textPrimary-73 MuiButton-flat-75 MuiButton-flatPrimary-76 MuiButton-sizeSmall-93"
+          className="MuiButtonBase-root-87 MuiButton-root-61 MuiButton-text-63 MuiButton-textPrimary-64 MuiButton-flat-66 MuiButton-flatPrimary-67 MuiButton-sizeSmall-84"
           disabled={false}
           id="edit-contact"
           onBlur={[Function]}
@@ -68,17 +68,17 @@ exports[`renders a contact correctly 1`] = `
           type="button"
         >
           <span
-            className="MuiButton-label-71"
+            className="MuiButton-label-62"
           >
             Edit
           </span>
           <span
-            className="MuiTouchRipple-root-99"
+            className="MuiTouchRipple-root-90"
           />
         </button>
       </a>
       <button
-        className="MuiButtonBase-root-96 MuiButton-root-70 MuiButton-text-72 MuiButton-textPrimary-73 MuiButton-flat-75 MuiButton-flatPrimary-76 MuiButton-sizeSmall-93 MuiCardActions-action-69"
+        className="MuiButtonBase-root-87 MuiButton-root-61 MuiButton-text-63 MuiButton-textPrimary-64 MuiButton-flat-66 MuiButton-flatPrimary-67 MuiButton-sizeSmall-84 MuiCardActions-action-60"
         disabled={false}
         id="delete-contact"
         onBlur={[Function]}
@@ -96,12 +96,12 @@ exports[`renders a contact correctly 1`] = `
         type="button"
       >
         <span
-          className="MuiButton-label-71"
+          className="MuiButton-label-62"
         >
           Delete
         </span>
         <span
-          className="MuiTouchRipple-root-99"
+          className="MuiTouchRipple-root-90"
         />
       </button>
     </div>
@@ -132,7 +132,7 @@ exports[`renders correctly when loading 1`] = `
       className="Spinner-root-31"
     >
       <div
-        className="MuiCircularProgress-root-106 MuiCircularProgress-colorPrimary-109 MuiCircularProgress-indeterminate-108"
+        className="MuiCircularProgress-root-97 MuiCircularProgress-colorPrimary-100 MuiCircularProgress-indeterminate-99"
         role="progressbar"
         style={
           Object {
@@ -142,11 +142,11 @@ exports[`renders correctly when loading 1`] = `
         }
       >
         <svg
-          className="MuiCircularProgress-svg-111"
+          className="MuiCircularProgress-svg-102"
           viewBox="22 22 44 44"
         >
           <circle
-            className="MuiCircularProgress-circle-112 MuiCircularProgress-circleIndeterminate-114"
+            className="MuiCircularProgress-circle-103 MuiCircularProgress-circleIndeterminate-105"
             cx={44}
             cy={44}
             fill="none"
@@ -158,15 +158,15 @@ exports[`renders correctly when loading 1`] = `
       </div>
     </div>
     <div
-      className="MuiCardActions-root-68"
+      className="MuiCardActions-root-59"
     >
       <a
-        className="MuiCardActions-action-69"
+        className="MuiCardActions-action-60"
         href="/edit/4"
         onClick={[Function]}
       >
         <button
-          className="MuiButtonBase-root-96 MuiButton-root-70 MuiButton-text-72 MuiButton-textPrimary-73 MuiButton-flat-75 MuiButton-flatPrimary-76 MuiButton-sizeSmall-93"
+          className="MuiButtonBase-root-87 MuiButton-root-61 MuiButton-text-63 MuiButton-textPrimary-64 MuiButton-flat-66 MuiButton-flatPrimary-67 MuiButton-sizeSmall-84"
           disabled={false}
           id="edit-contact"
           onBlur={[Function]}
@@ -183,17 +183,17 @@ exports[`renders correctly when loading 1`] = `
           type="button"
         >
           <span
-            className="MuiButton-label-71"
+            className="MuiButton-label-62"
           >
             Edit
           </span>
           <span
-            className="MuiTouchRipple-root-99"
+            className="MuiTouchRipple-root-90"
           />
         </button>
       </a>
       <button
-        className="MuiButtonBase-root-96 MuiButton-root-70 MuiButton-text-72 MuiButton-textPrimary-73 MuiButton-flat-75 MuiButton-flatPrimary-76 MuiButton-sizeSmall-93 MuiCardActions-action-69"
+        className="MuiButtonBase-root-87 MuiButton-root-61 MuiButton-text-63 MuiButton-textPrimary-64 MuiButton-flat-66 MuiButton-flatPrimary-67 MuiButton-sizeSmall-84 MuiCardActions-action-60"
         disabled={false}
         id="delete-contact"
         onBlur={[Function]}
@@ -211,12 +211,12 @@ exports[`renders correctly when loading 1`] = `
         type="button"
       >
         <span
-          className="MuiButton-label-71"
+          className="MuiButton-label-62"
         >
           Delete
         </span>
         <span
-          className="MuiTouchRipple-root-99"
+          className="MuiTouchRipple-root-90"
         />
       </button>
     </div>
@@ -240,7 +240,7 @@ exports[`renders correctly when no large avatar image 1`] = `
       className="MuiCardContent-root-32"
     >
       <h2
-        className="MuiTypography-root-33 MuiTypography-headline-38 MuiTypography-gutterBottom-60"
+        className="MuiTypography-root-33 MuiTypography-headline-38 MuiTypography-gutterBottom-51"
       >
         Marchall
          
@@ -260,15 +260,15 @@ exports[`renders correctly when no large avatar image 1`] = `
       </p>
     </div>
     <div
-      className="MuiCardActions-root-68"
+      className="MuiCardActions-root-59"
     >
       <a
-        className="MuiCardActions-action-69"
+        className="MuiCardActions-action-60"
         href="/edit/4"
         onClick={[Function]}
       >
         <button
-          className="MuiButtonBase-root-96 MuiButton-root-70 MuiButton-text-72 MuiButton-textPrimary-73 MuiButton-flat-75 MuiButton-flatPrimary-76 MuiButton-sizeSmall-93"
+          className="MuiButtonBase-root-87 MuiButton-root-61 MuiButton-text-63 MuiButton-textPrimary-64 MuiButton-flat-66 MuiButton-flatPrimary-67 MuiButton-sizeSmall-84"
           disabled={false}
           id="edit-contact"
           onBlur={[Function]}
@@ -285,17 +285,17 @@ exports[`renders correctly when no large avatar image 1`] = `
           type="button"
         >
           <span
-            className="MuiButton-label-71"
+            className="MuiButton-label-62"
           >
             Edit
           </span>
           <span
-            className="MuiTouchRipple-root-99"
+            className="MuiTouchRipple-root-90"
           />
         </button>
       </a>
       <button
-        className="MuiButtonBase-root-96 MuiButton-root-70 MuiButton-text-72 MuiButton-textPrimary-73 MuiButton-flat-75 MuiButton-flatPrimary-76 MuiButton-sizeSmall-93 MuiCardActions-action-69"
+        className="MuiButtonBase-root-87 MuiButton-root-61 MuiButton-text-63 MuiButton-textPrimary-64 MuiButton-flat-66 MuiButton-flatPrimary-67 MuiButton-sizeSmall-84 MuiCardActions-action-60"
         disabled={false}
         id="delete-contact"
         onBlur={[Function]}
@@ -313,12 +313,12 @@ exports[`renders correctly when no large avatar image 1`] = `
         type="button"
       >
         <span
-          className="MuiButton-label-71"
+          className="MuiButton-label-62"
         >
           Delete
         </span>
         <span
-          className="MuiTouchRipple-root-99"
+          className="MuiTouchRipple-root-90"
         />
       </button>
     </div>
