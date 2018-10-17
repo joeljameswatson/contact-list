@@ -16,11 +16,12 @@ class ListContainer extends Component {
 
   render() {
     const { list, isFetching } = this.props;
-    const showSpinner = isFetching && list.length === 0;
+    const showSpinner = isFetching && list.size === 0;
+    const listAsJS = list.toJS();
     return (
       <React.Fragment>
         <Spinner isVisible={showSpinner} />
-        <ContactList contacts={list} />
+        <ContactList contacts={listAsJS} />
       </React.Fragment>
     );
   }

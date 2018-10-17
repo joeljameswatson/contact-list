@@ -1,9 +1,10 @@
-import merge from "lodash/merge";
+// import merge from "lodash/merge";
+import { Map, merge } from "immutable";
 
-const byId = (state = {}, action) => {
+const byId = (state = Map({}), action) => {
   switch (action.type) {
     case "FETCH_CONTACTS_SUCCESS":
-      return merge({}, state, action.response.entities.contacts);
+      return state.merge(action.response.entities.contacts);
     case "FETCH_CONTACT_DETAIL_SUCCESS":
     case "CREATE_CONTACT_SUCCESS":
     case "UPDATE_CONTACT_SUCCESS":
@@ -21,6 +22,6 @@ const byId = (state = {}, action) => {
 
 export const getIsDetailFetched = (state, id) =>
   state[id] && state[id].isDetailFetched;
-export const getContact = (state, id) => state[id];
+export const getContact = (state, id) => state.get(id);
 
 export default byId;
