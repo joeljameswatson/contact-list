@@ -23,6 +23,8 @@ export class DetailContainer extends Component {
 
   render() {
     const { contact } = this.props;
+    const contactAsJS = contact && contact.toJS();
+
     if (this.props.errorMessage) {
       return (
         <ApiError
@@ -31,9 +33,10 @@ export class DetailContainer extends Component {
         />
       );
     }
+
     return (
       <Contact
-        contact={contact}
+        contact={contactAsJS}
         handleRequestDelete={this.handleRequestDelete}
         loading={this.props.isFetching}
         id={this.props.match.params.id}

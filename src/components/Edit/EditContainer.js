@@ -20,10 +20,12 @@ class Container extends Component {
   };
 
   render() {
+    const contactAsJS = this.props.contact && this.props.contact.toJS();
+
     return (
       <ContactInfoForm
         handleSave={this.handleUpdateContact}
-        existingContact={this.props.contact}
+        existingContact={contactAsJS}
         title="Edit Contact Details"
       />
     );

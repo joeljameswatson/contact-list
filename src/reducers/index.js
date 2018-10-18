@@ -13,8 +13,7 @@ export const getContactList = state => {
 };
 
 export const getContactDetail = (state, id) => {
-  const contacts = getContactList(state);
-  return contacts.find(contact => contact.id === id);
+  return fromById.getContact(state.byId, id);
 };
 
 export const getIsFetching = state => {

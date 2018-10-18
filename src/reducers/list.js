@@ -7,10 +7,10 @@ const ids = (state = List(), action) => {
       return List(action.response.result);
     case "FETCH_CONTACT_DETAIL_SUCCESS":
     case "CREATE_CONTACT_SUCCESS":
-      if (state.some(id => id === action.response.result)) {
+      if (state.has(action.response.result)) {
         return state;
       }
-      return [...state, action.response.result];
+      return state.push(action.response.result);
     case "DELETE_CONTACT_SUCCESS":
       return state.filter(id => id !== action.id);
     default:
