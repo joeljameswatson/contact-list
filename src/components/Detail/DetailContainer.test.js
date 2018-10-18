@@ -2,6 +2,7 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import { DetailContainer } from "./DetailContainer";
 import { MemoryRouter } from "react-router-dom";
+import { Map } from "immutable";
 
 test("DetailContainer calls fetchContactDetail when it mounts", () => {
   const props = {
@@ -52,7 +53,7 @@ test("DetailContainer passes correct props to Contact", () => {
     match: { params: { id: "1" } },
     fetchContactDetail: () => null,
     errorMessage: null,
-    contact: {},
+    contact: Map(),
     isFetching: false
   };
   const wrapper = mount(
@@ -63,7 +64,7 @@ test("DetailContainer passes correct props to Contact", () => {
   const contactProps = wrapper.find("Contact").props();
   const detailContainer = wrapper.find("DetailContainer");
 
-  expect(contactProps.contact).toEqual(props.contact);
+  expect(contactProps.contact).toEqual(props.contact.toJS());
   expect(contactProps.handleRequestDelete).toEqual(
     detailContainer.instance().handleRequestDelete
   );
