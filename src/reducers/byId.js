@@ -1,13 +1,13 @@
-import { Map } from "immutable";
+import { Map, fromJS } from "immutable";
 
 const byId = (state = Map({}), action) => {
   switch (action.type) {
     case "FETCH_CONTACTS_SUCCESS":
-      return state.merge(action.response.entities.contacts);
+      return state.merge(fromJS(action.response.entities.contacts));
     case "FETCH_CONTACT_DETAIL_SUCCESS":
     case "CREATE_CONTACT_SUCCESS":
     case "UPDATE_CONTACT_SUCCESS":
-      const merged = state.merge(action.response.entities.contacts);
+      const merged = state.merge(fromJS(action.response.entities.contacts));
       return merged.setIn([action.response.result, "isDetailFetched"], true);
     case "DELETE_CONTACT_SUCCESS":
       return state.delete(action.id);
