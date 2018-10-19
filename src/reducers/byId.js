@@ -1,6 +1,6 @@
 import { Map, fromJS } from "immutable";
 
-const byId = (state = Map({}), action) => {
+const byId = (state = Map(), action) => {
   switch (action.type) {
     case "FETCH_CONTACTS_SUCCESS":
       return state.merge(fromJS(action.response.entities.contacts));

@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware, compose } from "redux";
+import { Map } from "immutable";
 import callAPIMiddleware from "./callAPIMiddleware";
 import rootReducer from "./reducers";
 
@@ -8,8 +9,10 @@ const configureStore = () => {
   const composeEnhancers =
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   const middlewares = [callAPIMiddleware];
+  const initialState = Map();
   const store = createStore(
     rootReducer,
+    initialState,
     // persisted state goes here,
     composeEnhancers(applyMiddleware(...middlewares))
   );

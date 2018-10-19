@@ -1,4 +1,4 @@
-import { combineReducers } from "redux";
+import { combineReducers } from "redux-immutable";
 import { List } from "immutable";
 
 const ids = (state = List(), action) => {
@@ -61,9 +61,9 @@ const list = combineReducers({
   errorMessage
 });
 
-export const getIds = state => state.ids;
-export const getIsFetching = state => state.isFetching;
-export const getErrorMessage = state => state.errorMessage;
-export const getIsListFetched = state => state.isListFetched;
+export const getIds = state => state.get("ids");
+export const getIsFetching = state => state.get("isFetching");
+export const getErrorMessage = state => state.get("errorMessage");
+export const getIsListFetched = state => state.get("isListFetched");
 
 export default list;

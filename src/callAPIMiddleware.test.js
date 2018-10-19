@@ -1,7 +1,7 @@
 import configureMockStore from "redux-mock-store";
 import * as actions from "actions";
 import callAPIMiddleware from "./callAPIMiddleware";
-import { Map } from "immutable";
+import { fromJS } from "immutable";
 // use fetch mock for a real api
 
 const middlewares = [callAPIMiddleware];
@@ -33,7 +33,8 @@ describe("async actions", () => {
       }
     ];
 
-    const store = mockStore({ byId: Map({}) });
+    const initialState = fromJS({ byId: {} });
+    const store = mockStore(initialState);
 
     return store.dispatch(actions.fetchContactDetail("2")).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
