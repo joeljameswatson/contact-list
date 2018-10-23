@@ -1,4 +1,4 @@
-import * as api from "api";
+import * as networkAccess from "networkAccess";
 import { getIsDetailFetched, getIsListFetched } from "reducers";
 
 export const fetchContacts = () => ({
@@ -7,7 +7,7 @@ export const fetchContacts = () => ({
     "FETCH_CONTACTS_SUCCESS",
     "FETCH_CONTACTS_FAILURE"
   ],
-  callAPI: () => api.fetchContacts(),
+  callAPI: () => networkAccess.fetchContacts(),
   shouldCallAPI: state => !getIsListFetched(state)
 });
 
@@ -17,7 +17,7 @@ export const fetchContactDetail = id => ({
     "FETCH_CONTACT_DETAIL_SUCCESS",
     "FETCH_CONTACT_DETAIL_FAILURE"
   ],
-  callAPI: () => api.fetchContactDetail(id),
+  callAPI: () => networkAccess.fetchContactDetail(id),
   shouldCallAPI: state => !getIsDetailFetched(state, id),
   payload: { id }
 });
@@ -28,7 +28,7 @@ export const createContact = data => ({
     "CREATE_CONTACT_SUCCESS",
     "CREATE_CONTACT_FAILURE"
   ],
-  callAPI: () => api.createContact(data)
+  callAPI: () => networkAccess.createContact(data)
 });
 
 export const deleteContact = id => ({
@@ -37,7 +37,7 @@ export const deleteContact = id => ({
     "DELETE_CONTACT_SUCCESS",
     "DELETE_CONTACT_FAILURE"
   ],
-  callAPI: () => api.deleteContact(id),
+  callAPI: () => networkAccess.deleteContact(id),
   payload: { id }
 });
 
@@ -47,6 +47,6 @@ export const updateContact = id => ({
     "UPDATE_CONTACT_SUCCESS",
     "UPDATE_CONTACT_FAILURE"
   ],
-  callAPI: () => api.updateContact(id),
+  callAPI: () => networkAccess.updateContact(id),
   payload: { id }
 });
