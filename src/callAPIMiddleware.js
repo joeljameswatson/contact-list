@@ -1,6 +1,4 @@
 // adapated from: https://redux.js.org/recipes/reducingboilerplate
-import { normalize } from "normalizr";
-import * as schema from "actions/schema";
 
 const callAPIMiddleware = ({ dispatch, getState }) => next => action => {
   const { types, callAPI, shouldCallAPI = () => true, payload = {} } = action;
@@ -32,16 +30,9 @@ const callAPIMiddleware = ({ dispatch, getState }) => next => action => {
 
   return callAPI().then(
     response => {
-      let normalizedResponse = null;
-      if (response && !Array.isArray(response)) {
-        normalizedResponse = normalize(response, schema.contact);
-      } else if (response && Array.isArray(response)) {
-        normalizedResponse = normalize(response, schema.arrayOfContacts);
-      }
-
       dispatch({
         ...payload,
-        response: normalizedResponse,
+        response,
         type: successType
       });
     },
