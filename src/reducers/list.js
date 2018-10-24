@@ -54,16 +54,31 @@ export const isListFetched = (state = false, action) => {
   }
 };
 
+export const fetchedDetailIDs = (state = List(), action) => {
+  switch (action.type) {
+    case "FETCH_CONTACT_DETAIL_SUCCESS":
+    case "CREATE_CONTACT_SUCCESS":
+      return state.push(action.id);
+    case "DELETE_CONTACT_SUCCESS":
+      return state.filter(id => id !== action.id);
+    default:
+      return state;
+  }
+};
+
 const list = combineReducers({
   ids,
   isFetching,
   isListFetched,
-  errorMessage
+  errorMessage,
+  fetchedDetailIDs
 });
 
 export const getIds = state => state.get("ids");
 export const getIsFetching = state => state.get("isFetching");
 export const getErrorMessage = state => state.get("errorMessage");
 export const getIsListFetched = state => state.get("isListFetched");
+export const getIsDetailFetched = (state, id) =>
+  state.get("fetchedDetailIDs").includes(id);
 
 export default list;

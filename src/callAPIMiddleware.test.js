@@ -13,7 +13,7 @@ describe("async actions", () => {
       { type: "FETCH_CONTACT_DETAIL_REQUEST", id: "2" },
       {
         id: "2",
-        response: {
+        response: fromJS({
           entities: {
             contacts: {
               "2": {
@@ -28,12 +28,12 @@ describe("async actions", () => {
             }
           },
           result: "2"
-        },
+        }),
         type: "FETCH_CONTACT_DETAIL_SUCCESS"
       }
     ];
 
-    const initialState = fromJS({ byId: {} });
+    const initialState = fromJS({ byId: {}, list: { fetchedDetailIDs: [] } });
     const store = mockStore(initialState);
 
     return store.dispatch(actions.fetchContactDetail("2")).then(() => {
