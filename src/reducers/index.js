@@ -29,7 +29,7 @@ export const getIsListFetched = state => {
 };
 
 export const getIsDetailFetched = (state, id) => {
-  return fromById.getIsDetailFetched(state.get("byId"), id);
+  return fromList.getIsDetailFetched(state.get("list"), id);
 };
 
 export default contacts;
