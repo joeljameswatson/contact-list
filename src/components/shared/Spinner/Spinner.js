@@ -1,26 +1,23 @@
-import React from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import { withStyles } from "@material-ui/core/styles";
+import React from "react";
+import styled from "styled-components";
 
-const styles = {
-  root: {
-    width: "100%",
-    display: "flex",
-    justifyContent: "center",
-    padding: 20
-  }
-};
+const Container = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+`;
 
-const Spinner = ({ isVisible, classes }) => {
+const Spinner = ({ isVisible }) => {
   if (isVisible) {
     return (
-      <div className={classes.root}>
+      <Container>
         <CircularProgress size={50} />
-      </div>
+      </Container>
     );
-  } else {
-    return null;
   }
+  return null;
 };
 
-export default withStyles(styles)(Spinner);
+export default Spinner;

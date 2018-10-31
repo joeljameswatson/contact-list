@@ -1,8 +1,9 @@
-import React from "react";
-import { shallow, mount } from "enzyme";
+import { mount, shallow } from "enzyme";
+
 import { DetailContainer } from "./DetailContainer";
-import { MemoryRouter } from "react-router-dom";
 import { Map } from "immutable";
+import { MemoryRouter } from "react-router-dom";
+import React from "react";
 
 test("DetailContainer calls fetchContactDetail when it mounts", () => {
   const props = {
@@ -22,14 +23,14 @@ test("DetailContainer renders correct components when no errorMessage", () => {
     fetchContactDetail: () => null,
     errorMessage: null
   };
-  const wrapper = mount(
+  const Container = mount(
     <MemoryRouter>
       <DetailContainer {...props} />
     </MemoryRouter>
   );
 
-  expect(wrapper.exists("Contact")).toBe(true);
-  expect(wrapper.exists("ApiError")).toBe(false);
+  expect(Container.exists("Contact")).toBe(true);
+  expect(Container.exists("ApiError")).toBe(false);
 });
 
 test("DetailContainer renders correct components when there is an errorMessage", () => {
@@ -38,14 +39,14 @@ test("DetailContainer renders correct components when there is an errorMessage",
     fetchContactDetail: () => null,
     errorMessage: "an error message"
   };
-  const wrapper = mount(
+  const Container = mount(
     <MemoryRouter>
       <DetailContainer {...props} />
     </MemoryRouter>
   );
 
-  expect(wrapper.exists("Contact")).toBe(false);
-  expect(wrapper.exists("ApiError")).toBe(true);
+  expect(Container.exists("Contact")).toBe(false);
+  expect(Container.exists("ApiError")).toBe(true);
 });
 
 test("DetailContainer passes correct props to Contact", () => {
@@ -56,13 +57,13 @@ test("DetailContainer passes correct props to Contact", () => {
     contact: Map(),
     isFetching: false
   };
-  const wrapper = mount(
+  const Container = mount(
     <MemoryRouter>
       <DetailContainer {...props} />
     </MemoryRouter>
   );
-  const contactProps = wrapper.find("Contact").props();
-  const detailContainer = wrapper.find("DetailContainer");
+  const contactProps = Container.find("Contact").props();
+  const detailContainer = Container.find("DetailContainer");
 
   expect(contactProps.contact).toEqual(props.contact.toJS());
   expect(contactProps.handleRequestDelete).toEqual(
@@ -78,13 +79,13 @@ test("DetailContainer passes correct props to ApiError", () => {
     fetchContactDetail: () => null,
     errorMessage: "an error message"
   };
-  const wrapper = mount(
+  const Container = mount(
     <MemoryRouter>
       <DetailContainer {...props} />
     </MemoryRouter>
   );
-  const apiErrorProps = wrapper.find("ApiError").props();
-  const detailContainer = wrapper.find("DetailContainer");
+  const apiErrorProps = Container.find("ApiError").props();
+  const detailContainer = Container.find("DetailContainer");
 
   expect(apiErrorProps.message).toEqual(props.errorMessage);
   expect(apiErrorProps.handleRetry).toEqual(

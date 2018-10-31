@@ -1,8 +1,8 @@
-import React from "react";
-import { shallow } from "enzyme";
 import { Contact } from "./Contact";
-import renderer from "react-test-renderer";
 import { MemoryRouter } from "react-router-dom";
+import React from "react";
+import renderer from "react-test-renderer";
+import { shallow } from "enzyme";
 
 test("renders a contact correctly", () => {
   const props = {
@@ -90,7 +90,7 @@ test("Contact calls handleRequestDelete on clicking delete", () => {
     classes: {},
     handleRequestDelete: jest.fn()
   };
-  const wrapper = shallow(<Contact {...props} />);
-  wrapper.find("#delete-contact").simulate("click");
+  const Container = shallow(<Contact {...props} />);
+  Container.find("#delete-contact").simulate("click");
   expect(props.handleRequestDelete).toHaveBeenCalledTimes(1);
 });

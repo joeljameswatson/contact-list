@@ -2,55 +2,86 @@
 
 exports[`renders a contact correctly 1`] = `
 <div
-  className="sc-bdVaJa dNIUDI"
+  className="sc-htpNat ixzLSm"
 >
   <div
-    className="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1"
+    className="sc-bdVaJa dNIUDI"
   >
     <div
-      className="MuiCardMedia-root-29"
-      style={
-        Object {
-          "backgroundImage": "url(\\"/avatars/24.jpg\\")",
+      className="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1 card"
+    >
+      <div
+        className="MuiCardMedia-root-29 media"
+        style={
+          Object {
+            "backgroundImage": "url(\\"/avatars/24.jpg\\")",
+          }
         }
-      }
-    />
-    <div
-      className="MuiCardContent-root-32"
-    >
-      <h2
-        className="MuiTypography-root-33 MuiTypography-headline-38 MuiTypography-gutterBottom-51"
+      />
+      <div
+        className="MuiCardContent-root-31"
       >
-        Marchall
-         
-        Abdee
-      </h2>
-      <p
-        className="MuiTypography-root-33 MuiTypography-body1-42"
+        <h2
+          className="MuiTypography-root-32 MuiTypography-headline-37 MuiTypography-gutterBottom-50"
+        >
+          Marchall
+           
+          Abdee
+        </h2>
+        <p
+          className="MuiTypography-root-32 MuiTypography-body1-41"
+        >
+          Email: 
+          mabdee0@behance.net
+        </p>
+        <p
+          className="MuiTypography-root-32 MuiTypography-body1-41"
+        >
+          Phone: 
+          2539464783
+        </p>
+      </div>
+      <div
+        className="MuiCardActions-root-58"
       >
-        Email: 
-        mabdee0@behance.net
-      </p>
-      <p
-        className="MuiTypography-root-33 MuiTypography-body1-42"
-      >
-        Phone: 
-        2539464783
-      </p>
-    </div>
-    <div
-      className="MuiCardActions-root-59"
-    >
-      <a
-        className="MuiCardActions-action-60"
-        href="/edit/4"
-        onClick={[Function]}
-      >
+        <a
+          className="MuiCardActions-action-59"
+          href="/edit/4"
+          onClick={[Function]}
+        >
+          <button
+            className="MuiButtonBase-root-86 MuiButton-root-60 MuiButton-text-62 MuiButton-textPrimary-63 MuiButton-flat-65 MuiButton-flatPrimary-66 MuiButton-sizeSmall-83"
+            disabled={false}
+            id="edit-contact"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiButton-label-61"
+            >
+              Edit
+            </span>
+            <span
+              className="MuiTouchRipple-root-89"
+            />
+          </button>
+        </a>
         <button
-          className="MuiButtonBase-root-87 MuiButton-root-61 MuiButton-text-63 MuiButton-textPrimary-64 MuiButton-flat-66 MuiButton-flatPrimary-67 MuiButton-sizeSmall-84"
+          className="MuiButtonBase-root-86 MuiButton-root-60 MuiButton-text-62 MuiButton-textPrimary-63 MuiButton-flat-65 MuiButton-flatPrimary-66 MuiButton-sizeSmall-83 MuiCardActions-action-59"
           disabled={false}
-          id="edit-contact"
+          id="delete-contact"
           onBlur={[Function]}
+          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -64,42 +95,15 @@ exports[`renders a contact correctly 1`] = `
           type="button"
         >
           <span
-            className="MuiButton-label-62"
+            className="MuiButton-label-61"
           >
-            Edit
+            Delete
           </span>
           <span
-            className="MuiTouchRipple-root-90"
+            className="MuiTouchRipple-root-89"
           />
         </button>
-      </a>
-      <button
-        className="MuiButtonBase-root-87 MuiButton-root-61 MuiButton-text-63 MuiButton-textPrimary-64 MuiButton-flat-66 MuiButton-flatPrimary-67 MuiButton-sizeSmall-84 MuiCardActions-action-60"
-        disabled={false}
-        id="delete-contact"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex="0"
-        type="button"
-      >
-        <span
-          className="MuiButton-label-62"
-        >
-          Delete
-        </span>
-        <span
-          className="MuiTouchRipple-root-90"
-        />
-      </button>
+      </div>
     </div>
   </div>
 </div>
@@ -107,61 +111,92 @@ exports[`renders a contact correctly 1`] = `
 
 exports[`renders correctly when loading 1`] = `
 <div
-  className="sc-bdVaJa dNIUDI"
+  className="sc-htpNat ixzLSm"
 >
   <div
-    className="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1"
+    className="sc-bdVaJa dNIUDI"
   >
     <div
-      className="MuiCardMedia-root-29"
-      style={
-        Object {
-          "backgroundImage": "url(\\"/avatars/24.jpg\\")",
-        }
-      }
-    />
-    <div
-      className="Spinner-root-31"
+      className="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1 card"
     >
       <div
-        className="MuiCircularProgress-root-97 MuiCircularProgress-colorPrimary-100 MuiCircularProgress-indeterminate-99"
-        role="progressbar"
+        className="MuiCardMedia-root-29 media"
         style={
           Object {
-            "height": 50,
-            "width": 50,
+            "backgroundImage": "url(\\"/avatars/24.jpg\\")",
           }
         }
+      />
+      <div
+        className="sc-bwzfXH fqBCWh"
       >
-        <svg
-          className="MuiCircularProgress-svg-102"
-          viewBox="22 22 44 44"
+        <div
+          className="MuiCircularProgress-root-96 MuiCircularProgress-colorPrimary-99 MuiCircularProgress-indeterminate-98"
+          role="progressbar"
+          style={
+            Object {
+              "height": 50,
+              "width": 50,
+            }
+          }
         >
-          <circle
-            className="MuiCircularProgress-circle-103 MuiCircularProgress-circleIndeterminate-105"
-            cx={44}
-            cy={44}
-            fill="none"
-            r={20.2}
-            strokeWidth={3.6}
-            style={Object {}}
-          />
-        </svg>
+          <svg
+            className="MuiCircularProgress-svg-101"
+            viewBox="22 22 44 44"
+          >
+            <circle
+              className="MuiCircularProgress-circle-102 MuiCircularProgress-circleIndeterminate-104"
+              cx={44}
+              cy={44}
+              fill="none"
+              r={20.2}
+              strokeWidth={3.6}
+              style={Object {}}
+            />
+          </svg>
+        </div>
       </div>
-    </div>
-    <div
-      className="MuiCardActions-root-59"
-    >
-      <a
-        className="MuiCardActions-action-60"
-        href="/edit/4"
-        onClick={[Function]}
+      <div
+        className="MuiCardActions-root-58"
       >
+        <a
+          className="MuiCardActions-action-59"
+          href="/edit/4"
+          onClick={[Function]}
+        >
+          <button
+            className="MuiButtonBase-root-86 MuiButton-root-60 MuiButton-text-62 MuiButton-textPrimary-63 MuiButton-flat-65 MuiButton-flatPrimary-66 MuiButton-sizeSmall-83"
+            disabled={false}
+            id="edit-contact"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiButton-label-61"
+            >
+              Edit
+            </span>
+            <span
+              className="MuiTouchRipple-root-89"
+            />
+          </button>
+        </a>
         <button
-          className="MuiButtonBase-root-87 MuiButton-root-61 MuiButton-text-63 MuiButton-textPrimary-64 MuiButton-flat-66 MuiButton-flatPrimary-67 MuiButton-sizeSmall-84"
+          className="MuiButtonBase-root-86 MuiButton-root-60 MuiButton-text-62 MuiButton-textPrimary-63 MuiButton-flat-65 MuiButton-flatPrimary-66 MuiButton-sizeSmall-83 MuiCardActions-action-59"
           disabled={false}
-          id="edit-contact"
+          id="delete-contact"
           onBlur={[Function]}
+          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -175,42 +210,15 @@ exports[`renders correctly when loading 1`] = `
           type="button"
         >
           <span
-            className="MuiButton-label-62"
+            className="MuiButton-label-61"
           >
-            Edit
+            Delete
           </span>
           <span
-            className="MuiTouchRipple-root-90"
+            className="MuiTouchRipple-root-89"
           />
         </button>
-      </a>
-      <button
-        className="MuiButtonBase-root-87 MuiButton-root-61 MuiButton-text-63 MuiButton-textPrimary-64 MuiButton-flat-66 MuiButton-flatPrimary-67 MuiButton-sizeSmall-84 MuiCardActions-action-60"
-        disabled={false}
-        id="delete-contact"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex="0"
-        type="button"
-      >
-        <span
-          className="MuiButton-label-62"
-        >
-          Delete
-        </span>
-        <span
-          className="MuiTouchRipple-root-90"
-        />
-      </button>
+      </div>
     </div>
   </div>
 </div>
@@ -218,48 +226,79 @@ exports[`renders correctly when loading 1`] = `
 
 exports[`renders correctly when no large avatar image 1`] = `
 <div
-  className="sc-bdVaJa dNIUDI"
+  className="sc-htpNat ixzLSm"
 >
   <div
-    className="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1"
+    className="sc-bdVaJa dNIUDI"
   >
-    
     <div
-      className="MuiCardContent-root-32"
+      className="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1 card"
     >
-      <h2
-        className="MuiTypography-root-33 MuiTypography-headline-38 MuiTypography-gutterBottom-51"
+      
+      <div
+        className="MuiCardContent-root-31"
       >
-        Marchall
-         
-        Abdee
-      </h2>
-      <p
-        className="MuiTypography-root-33 MuiTypography-body1-42"
+        <h2
+          className="MuiTypography-root-32 MuiTypography-headline-37 MuiTypography-gutterBottom-50"
+        >
+          Marchall
+           
+          Abdee
+        </h2>
+        <p
+          className="MuiTypography-root-32 MuiTypography-body1-41"
+        >
+          Email: 
+          mabdee0@behance.net
+        </p>
+        <p
+          className="MuiTypography-root-32 MuiTypography-body1-41"
+        >
+          Phone: 
+          2539464783
+        </p>
+      </div>
+      <div
+        className="MuiCardActions-root-58"
       >
-        Email: 
-        mabdee0@behance.net
-      </p>
-      <p
-        className="MuiTypography-root-33 MuiTypography-body1-42"
-      >
-        Phone: 
-        2539464783
-      </p>
-    </div>
-    <div
-      className="MuiCardActions-root-59"
-    >
-      <a
-        className="MuiCardActions-action-60"
-        href="/edit/4"
-        onClick={[Function]}
-      >
+        <a
+          className="MuiCardActions-action-59"
+          href="/edit/4"
+          onClick={[Function]}
+        >
+          <button
+            className="MuiButtonBase-root-86 MuiButton-root-60 MuiButton-text-62 MuiButton-textPrimary-63 MuiButton-flat-65 MuiButton-flatPrimary-66 MuiButton-sizeSmall-83"
+            disabled={false}
+            id="edit-contact"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiButton-label-61"
+            >
+              Edit
+            </span>
+            <span
+              className="MuiTouchRipple-root-89"
+            />
+          </button>
+        </a>
         <button
-          className="MuiButtonBase-root-87 MuiButton-root-61 MuiButton-text-63 MuiButton-textPrimary-64 MuiButton-flat-66 MuiButton-flatPrimary-67 MuiButton-sizeSmall-84"
+          className="MuiButtonBase-root-86 MuiButton-root-60 MuiButton-text-62 MuiButton-textPrimary-63 MuiButton-flat-65 MuiButton-flatPrimary-66 MuiButton-sizeSmall-83 MuiCardActions-action-59"
           disabled={false}
-          id="edit-contact"
+          id="delete-contact"
           onBlur={[Function]}
+          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -273,42 +312,15 @@ exports[`renders correctly when no large avatar image 1`] = `
           type="button"
         >
           <span
-            className="MuiButton-label-62"
+            className="MuiButton-label-61"
           >
-            Edit
+            Delete
           </span>
           <span
-            className="MuiTouchRipple-root-90"
+            className="MuiTouchRipple-root-89"
           />
         </button>
-      </a>
-      <button
-        className="MuiButtonBase-root-87 MuiButton-root-61 MuiButton-text-63 MuiButton-textPrimary-64 MuiButton-flat-66 MuiButton-flatPrimary-67 MuiButton-sizeSmall-84 MuiCardActions-action-60"
-        disabled={false}
-        id="delete-contact"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex="0"
-        type="button"
-      >
-        <span
-          className="MuiButton-label-62"
-        >
-          Delete
-        </span>
-        <span
-          className="MuiTouchRipple-root-90"
-        />
-      </button>
+      </div>
     </div>
   </div>
 </div>
