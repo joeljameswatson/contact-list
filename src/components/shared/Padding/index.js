@@ -1,9 +1,17 @@
+import styled, { css } from "styled-components";
+
 import React from "react";
 
-const Padding = props => (
-  <div style={{ padding: "15px" }} {...props}>
-    {props.children}
-  </div>
-);
+const Div = styled.div`
+  padding: 15px;
+
+  ${props =>
+    props.px &&
+    css`
+      padding: ${props.px}px;
+    `};
+`;
+
+const Padding = props => <Div {...props}>{props.children}</Div>;
 
 export default Padding;

@@ -2,11 +2,7 @@
 
 exports[`renders a contact correctly 1`] = `
 <div
-  style={
-    Object {
-      "padding": "15px",
-    }
-  }
+  className="sc-bdVaJa dNIUDI"
 >
   <div
     className="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1"
@@ -111,11 +107,7 @@ exports[`renders a contact correctly 1`] = `
 
 exports[`renders correctly when loading 1`] = `
 <div
-  style={
-    Object {
-      "padding": "15px",
-    }
-  }
+  className="sc-bdVaJa dNIUDI"
 >
   <div
     className="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1"
@@ -226,11 +218,7 @@ exports[`renders correctly when loading 1`] = `
 
 exports[`renders correctly when no large avatar image 1`] = `
 <div
-  style={
-    Object {
-      "padding": "15px",
-    }
-  }
+  className="sc-bdVaJa dNIUDI"
 >
   <div
     className="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1"
