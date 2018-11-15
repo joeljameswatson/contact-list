@@ -1,9 +1,9 @@
 const isFetching = (state = false, action) => {
   switch (action.type) {
-    case "FETCH_CONTACTS_REQUEST":
+    case "FETCH_CONTACT_DETAIL_REQUEST":
       return true;
-    case "FETCH_CONTACTS_SUCCESS":
-    case "FETCH_CONTACTS_FAILURE":
+    case "FETCH_CONTACT_DETAIL_SUCCESS":
+    case "FETCH_CONTACT_DETAIL_FAILURE":
       return false;
     default:
       return state;

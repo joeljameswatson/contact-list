@@ -1,4 +1,4 @@
-const isListFetched = (state = false, action) => {
+const isFetched = (state = false, action) => {
   switch (action.type) {
     case "FETCH_CONTACTS_SUCCESS":
       return true;
@@ -7,4 +7,4 @@ const isListFetched = (state = false, action) => {
   }
 };
 
-export default isListFetched;
+export default isFetched;

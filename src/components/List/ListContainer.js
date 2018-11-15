@@ -1,9 +1,11 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import ContactList from "./List";
 import * as actions from "actions";
-import { getContactList, getIsFetching } from "reducers";
+
+import React, { Component } from "react";
+import { getContactList, getIsListFetching } from "reducers";
+
+import ContactList from "./List";
 import Spinner from "components/shared/Spinner";
+import { connect } from "react-redux";
 
 class ListContainer extends Component {
   componentDidMount() {
@@ -30,7 +32,7 @@ class ListContainer extends Component {
 const mapStateToProps = state => {
   return {
     list: getContactList(state),
-    isFetching: getIsFetching(state)
+    isFetching: getIsListFetching(state)
   };
 };
 

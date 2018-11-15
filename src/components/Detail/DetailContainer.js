@@ -1,9 +1,15 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import Contact from "./Contact";
 import * as actions from "actions";
-import { getContactDetail, getIsFetching, getErrorMessage } from "reducers";
+
+import React, { Component } from "react";
+import {
+  getContactDetail,
+  getErrorMessage,
+  getIsDetailFetching
+} from "reducers";
+
 import ApiError from "components/shared/ApiError";
+import Contact from "./Contact";
+import { connect } from "react-redux";
 
 export class DetailContainer extends Component {
   componentDidMount() {
@@ -48,7 +54,7 @@ export class DetailContainer extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     contact: getContactDetail(state, ownProps.match.params.id),
-    isFetching: getIsFetching(state),
+    isFetching: getIsDetailFetching(state),
     errorMessage: getErrorMessage(state)
   };
 };
