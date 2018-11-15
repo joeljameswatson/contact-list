@@ -1,35 +1,26 @@
-import { combineReducers } from "redux-immutable";
-import byId, * as fromById from "./byId";
-import list, * as fromList from "./list";
-
-const contacts = combineReducers({
-  byId,
-  list
-});
+import * as fromList from "./list";
+export { default } from "./list";
 
 export const getContactList = state => {
-  const contactIds = fromList.getIds(state.get("list"));
-  return contactIds.map(id => fromById.getContact(state.get("byId"), id));
+  return fromList.getContactList(state);
 };
 
 export const getContactDetail = (state, id) => {
-  return fromById.getContact(state.get("byId"), id);
+  return fromList.getContactDetail(state, id);
 };
 
 export const getIsFetching = state => {
-  return fromList.getIsFetching(state.get("list"));
+  return fromList.getIsFetching(state);
 };
 
 export const getErrorMessage = state => {
-  return fromList.getErrorMessage(state.get("list"));
+  return fromList.getErrorMessage(state);
 };
 
 export const getIsListFetched = state => {
-  return fromList.getIsListFetched(state.get("list"));
+  return fromList.getIsListFetched(state);
 };
 
 export const getIsDetailFetched = (state, id) => {
-  return fromList.getIsDetailFetched(state.get("list"), id);
+  return fromList.getIsDetailFetched(state, id);
 };
-
-export default contacts;

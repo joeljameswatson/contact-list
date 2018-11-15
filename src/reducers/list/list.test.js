@@ -1,4 +1,4 @@
-import { isListFetched } from "./list";
+import { isListFetched } from ".";
 
 describe("isListFetched reducer", () => {
   it("should return the initial state", () => {
