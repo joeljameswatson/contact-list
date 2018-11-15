@@ -1,11 +1,11 @@
-import React from "react";
-import { Provider } from "react-redux";
-import { BrowserRouter as Router } from "react-router-dom";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Header from "./Header";
-import Routes from "./Routes";
-import configureStore from "../configureStore";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Layout from "./Layout";
+import { Provider } from "react-redux";
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import configureStore from "../configureStore";
 
 const store = configureStore();
 
@@ -26,8 +26,7 @@ const Root = () => (
       <Router basename={process.env.PUBLIC_URL}>
         <React.Fragment>
           <CssBaseline />
-          <Header />
-          <Routes />
+          <Layout />
         </React.Fragment>
       </Router>
     </Provider>
