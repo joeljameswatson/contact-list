@@ -1,9 +1,9 @@
 import { Redirect, Route, Switch } from "react-router-dom";
 
-import Create from "./pages/Create";
-import Detail from "./pages/Detail";
-import Edit from "./pages/Edit";
-import List from "./pages/List";
+import Create from "components/views/Create";
+import Detail from "components/views/Detail";
+import Edit from "components/views/Edit";
+import List from "components/views/List";
 import React from "react";
 
 const Routes = () => (

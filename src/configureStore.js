@@ -1,8 +1,8 @@
 import { applyMiddleware, compose, createStore } from "redux";
 
 import { Map } from "immutable";
-import callAPIMiddleware from "./callAPIMiddleware";
-import rootReducer from "./reducers/";
+import callAPIMiddleware from "middleware/callAPIMiddleware";
+import rootReducer from "reducers";
 
 // By exporting configureStore instead of just store, we will be able to create as many store instances as we want for testing.
 const configureStore = () => {
