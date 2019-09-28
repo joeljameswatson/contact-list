@@ -4,11 +4,13 @@ import Contact from "./Contact";
 
 const ContactList = ({ contacts }) => {
   return (
-    <List>
-      {contacts.map(contactData => (
-        <Contact key={contactData.id} contact={contactData} />
-      ))}
-    </List>
+    <section>
+      <List>
+        {contacts.map(contactData => (
+          <Contact key={contactData.id} contact={contactData} />
+        ))}
+      </List>
+    </section>
   );
 };
 

@@ -11,7 +11,7 @@ import Spinner from "components/shared/Spinner";
 import Typography from "@material-ui/core/Typography";
 import styled from "styled-components";
 
-const Container = styled.div`
+const Container = styled.section`
   .card {
     max-width: 400px;
     margin: 30px auto;

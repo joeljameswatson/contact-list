@@ -7,7 +7,7 @@ import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import styled from "styled-components";
 
-const Container = styled.div`
+const Container = styled.section`
   .paper {
     max-width: 600px;
     margin: 30px auto;

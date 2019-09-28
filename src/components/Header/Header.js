@@ -27,7 +27,7 @@ const Container = styled.div`
 
 const Header = () => (
   <Container>
-    <AppBar color="primary" className="grow" position="sticky">
+    <AppBar color="primary" className="grow" position="fixed">
       <Toolbar>
         <Typography variant="title" color="inherit" className="app-name">
           <Link to="/contacts" className="link">
