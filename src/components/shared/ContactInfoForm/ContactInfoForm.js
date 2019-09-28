@@ -1,44 +1,29 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Form from "./Form";
 
-class ContactInfoForm extends Component {
-  constructor(props) {
-    super(props);
-    const newContact = {
-      first_name: "",
-      last_name: "",
-      email: "",
-      phone: ""
-    };
-    this.state = this.props.existingContact || newContact;
+const newContact = {
+  first_name: "",
+  last_name: "",
+  email: "",
+  phone: ""
+};
+
+function ContactInfoForm({ title, existingContact, handleSave }) {
+  const [contactData, setContactData] = useState(existingContact || newContact);
+  function handleInputChange({ target: { value, name } }) {
+    setContactData({ ...contactData, [name]: value });
   }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.existingContact !== this.props.existingContact) {
-      this.setState(this.props.existingContact);
-    }
+  function saveContact() {
+    handleSave(contactData);
   }
-
-  handleSave = () => {
-    this.props.handleSave(this.state);
-  };
-
-  handleInputChange = ({ target: { value, name } }) => {
-    this.setState({
-      [name]: value
-    });
-  };
-
-  render() {
-    return (
-      <Form
-        handleInputChange={this.handleInputChange}
-        handleSave={this.handleSave}
-        values={this.state}
-        title={this.props.title}
-      />
-    );
-  }
+  return (
+    <Form
+      handleInputChange={handleInputChange}
+      handleSave={saveContact}
+      values={contactData}
+      title={title}
+    />
+  );
 }
 
 export default ContactInfoForm;

@@ -1,35 +1,38 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import * as actions from "actions";
 import ContactInfoForm from "components/shared/ContactInfoForm";
 import { getContactDetail } from "reducers";
 
-class Container extends Component {
-  componentDidMount() {
-    this.fetchData();
-  }
+function EditContainer({
+  match: {
+    params: { id }
+  },
+  fetchContactDetail,
+  contact,
+  updateContact,
+  history
+}) {
+  useEffect(() => {
+    fetchContactDetail(id);
+  }, [fetchContactDetail, id]);
 
-  fetchData = () => {
-    const id = this.props.match.params.id;
-    this.props.fetchContactDetail(id);
-  };
+  // prevents initializing state in ContactInfoForm with empty object when refreshing or updating url
+  if (!contact) return null;
 
-  handleUpdateContact = data => {
-    const { updateContact, history } = this.props;
+  const contactAsJS = contact && contact.toJS();
+
+  function handleUpdateContact(data) {
     updateContact(data).then(() => history.push("/contacts"));
-  };
-
-  render() {
-    const contactAsJS = this.props.contact && this.props.contact.toJS();
-
-    return (
-      <ContactInfoForm
-        handleSave={this.handleUpdateContact}
-        existingContact={contactAsJS}
-        title="Edit Contact Details"
-      />
-    );
   }
+
+  return (
+    <ContactInfoForm
+      handleSave={handleUpdateContact}
+      existingContact={contactAsJS}
+      title="Edit Contact Details"
+    />
+  );
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -39,4 +42,4 @@ const mapStateToProps = (state, ownProps) => {
 export default connect(
   mapStateToProps,
   actions
-)(Container);
+)(EditContainer);

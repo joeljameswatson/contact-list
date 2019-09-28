@@ -1,6 +1,6 @@
-import * as actions from "actions";
+import { fetchContactDetail, deleteContact } from "actions";
 
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import {
   getContactDetail,
   getErrorMessage,
@@ -11,44 +11,44 @@ import ApiError from "components/shared/ApiError";
 import Contact from "./Contact";
 import { connect } from "react-redux";
 
-export class DetailContainer extends Component {
-  componentDidMount() {
-    this.fetchData();
+export function DetailContainer({
+  match: {
+    params: { id }
+  },
+  contact,
+  deleteContact,
+  history,
+  errorMessage,
+  fetchContactDetail,
+  isFetching
+}) {
+  useEffect(() => {
+    fetchContactDetail(id);
+  }, [fetchContactDetail, id]);
+
+  const contactAsJS = contact && contact.toJS();
+
+  function handleRequestDelete() {
+    deleteContact(id).then(() => history.push("/contacts"));
   }
 
-  fetchData = () => {
-    const id = this.props.match.params.id;
-    this.props.fetchContactDetail(id);
-  };
-
-  handleRequestDelete = () => {
-    const { match, deleteContact, history } = this.props;
-    const id = match.params.id;
-    deleteContact(id).then(() => history.push("/contacts"));
-  };
-
-  render() {
-    const { contact } = this.props;
-    const contactAsJS = contact && contact.toJS();
-
-    if (this.props.errorMessage) {
-      return (
-        <ApiError
-          message={this.props.errorMessage}
-          handleRetry={this.fetchData}
-        />
-      );
-    }
-
+  if (errorMessage) {
     return (
-      <Contact
-        contact={contactAsJS}
-        handleRequestDelete={this.handleRequestDelete}
-        loading={this.props.isFetching}
-        id={this.props.match.params.id}
+      <ApiError
+        message={errorMessage}
+        handleRetry={() => fetchContactDetail(id)}
       />
     );
   }
+
+  return (
+    <Contact
+      contact={contactAsJS}
+      handleRequestDelete={handleRequestDelete}
+      loading={isFetching}
+      id={id}
+    />
+  );
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -61,5 +61,5 @@ const mapStateToProps = (state, ownProps) => {
 
 export default connect(
   mapStateToProps,
-  actions
+  { fetchContactDetail, deleteContact }
 )(DetailContainer);

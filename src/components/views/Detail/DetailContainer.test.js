@@ -11,7 +11,11 @@ test("DetailContainer calls fetchContactDetail when it mounts", () => {
     fetchContactDetail: jest.fn()
   };
 
-  shallow(<DetailContainer {...props} />);
+  mount(
+    <MemoryRouter>
+      <DetailContainer {...props} />
+    </MemoryRouter>
+  );
 
   expect(props.fetchContactDetail).toHaveBeenCalledTimes(1);
   expect(props.fetchContactDetail).toHaveBeenCalledWith("1");
@@ -63,12 +67,10 @@ test("DetailContainer passes correct props to Contact", () => {
     </MemoryRouter>
   );
   const contactProps = Container.find("Contact").props();
-  const detailContainer = Container.find("DetailContainer");
 
   expect(contactProps.contact).toEqual(props.contact.toJS());
-  expect(contactProps.handleRequestDelete).toEqual(
-    detailContainer.instance().handleRequestDelete
-  );
+  expect(contactProps.handleRequestDelete.name).toBe("handleRequestDelete");
+  expect(typeof contactProps.handleRequestDelete === "function").toBe(true);
   expect(contactProps.loading).toEqual(props.isFetching);
   expect(contactProps.id).toEqual(props.match.params.id);
 });
@@ -85,10 +87,7 @@ test("DetailContainer passes correct props to ApiError", () => {
     </MemoryRouter>
   );
   const apiErrorProps = Container.find("ApiError").props();
-  const detailContainer = Container.find("DetailContainer");
 
   expect(apiErrorProps.message).toEqual(props.errorMessage);
-  expect(apiErrorProps.handleRetry).toEqual(
-    detailContainer.instance().fetchData
-  );
+  expect(typeof apiErrorProps.handleRetry === "function").toBe(true);
 });
