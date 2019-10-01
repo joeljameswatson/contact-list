@@ -8,7 +8,7 @@ const newContact = {
   phone: ""
 };
 
-function ContactInfoForm({ title, existingContact, handleSave }) {
+function ContactInfoForm({ title, existingContact, handleSave, saved }) {
   const [contactData, setContactData] = useState(existingContact || newContact);
   function handleInputChange({ target: { value, name } }) {
     setContactData({ ...contactData, [name]: value });
@@ -22,6 +22,7 @@ function ContactInfoForm({ title, existingContact, handleSave }) {
       handleSave={saveContact}
       values={contactData}
       title={title}
+      disable={saved}
     />
   );
 }

@@ -15,7 +15,7 @@ const Container = styled.section`
   }
 `;
 
-const Form = ({ handleInputChange, handleSave, values, title }) => {
+const Form = ({ handleInputChange, handleSave, values, title, disable }) => {
   return (
     <Container>
       <Padding>
@@ -29,10 +29,12 @@ const Form = ({ handleInputChange, handleSave, values, title }) => {
                 <TextField
                   name="first_name"
                   label="First Name"
+                  placeholder="First Name"
                   value={values.first_name}
                   onChange={e => handleInputChange(e)}
                   margin="normal"
                   fullWidth
+                  disabled={disable}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -43,6 +45,7 @@ const Form = ({ handleInputChange, handleSave, values, title }) => {
                   onChange={e => handleInputChange(e)}
                   margin="normal"
                   fullWidth
+                  disabled={disable}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -53,6 +56,7 @@ const Form = ({ handleInputChange, handleSave, values, title }) => {
                   onChange={e => handleInputChange(e)}
                   margin="normal"
                   fullWidth
+                  disabled={disable}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -63,6 +67,7 @@ const Form = ({ handleInputChange, handleSave, values, title }) => {
                   onChange={e => handleInputChange(e)}
                   margin="normal"
                   fullWidth
+                  disabled={disable}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -70,6 +75,7 @@ const Form = ({ handleInputChange, handleSave, values, title }) => {
                   variant="contained"
                   color="primary"
                   onClick={handleSave}
+                  disabled={disable}
                 >
                   Save
                 </Button>
