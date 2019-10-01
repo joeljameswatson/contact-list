@@ -8,7 +8,7 @@ import styled from "styled-components";
 const AppLayout = styled.div`
   padding-top: 64px;
   padding-bottom: 40px;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
 `;
 
