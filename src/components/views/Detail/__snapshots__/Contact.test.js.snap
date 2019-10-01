@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a contact correctly 1`] = `
-<div
+<section
   className="sc-htpNat ixzLSm"
 >
   <div
@@ -108,11 +108,11 @@ exports[`renders a contact correctly 1`] = `
       </div>
     </div>
   </div>
-</div>
+</section>
 `;
 
 exports[`renders correctly when loading 1`] = `
-<div
+<section
   className="sc-htpNat ixzLSm"
 >
   <div
@@ -225,11 +225,11 @@ exports[`renders correctly when loading 1`] = `
       </div>
     </div>
   </div>
-</div>
+</section>
 `;
 
 exports[`renders correctly when no large avatar image 1`] = `
-<div
+<section
   className="sc-htpNat ixzLSm"
 >
   <div
@@ -329,5 +329,5 @@ exports[`renders correctly when no large avatar image 1`] = `
       </div>
     </div>
   </div>
-</div>
+</section>
 `;
